@@ -9,6 +9,10 @@ const client = new Client({
 
 
 client.on('messageCreate', message => {
+
+    if (message.author.bot) return;
+
+    message.reply(`Hello ${message.author.username} from ${message.guild.name}!`)
     console.log(message.content)
 })
 
