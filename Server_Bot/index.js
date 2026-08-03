@@ -4,7 +4,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 const client = new Client({
-  intencts: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages],
+  intencts: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent],
 });
 
 
