@@ -16,4 +16,10 @@ client.on('messageCreate', message => {
     console.log(message.content)
 })
 
+client.on('interactionCreate', async interaction => {
+  // console.log(interaction)
+  await interaction.reply("Pong !")
+}, 
+)
+
 client.login(process.env.DISCORD_BOT_TOKEN)
