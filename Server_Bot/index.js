@@ -11,6 +11,10 @@ const client = new Client({
   ],
 });
 
+client.on("ready", () => {
+  console.log(`Logged in as ${client.user.tag}! 🤖`);
+});
+
 client.on("messageCreate", (message) => {
   if (message.author.bot) return;
 
@@ -19,15 +23,20 @@ client.on("messageCreate", (message) => {
 });
 
 client.on("interactionCreate", async (interaction) => {
-  // console.log(interaction)
-  await interaction.reply("Pong !");
-});
+  if (!interaction.isChatInputCommand()) return;
 
-client.on("interactionCreate", async (interaction) => {
-  const url = message.content.split("create")[1];
-  console.log(url);
-  // console.log(interaction)
-  await interaction.reply("Your URL is  !", url);
+  const { commandName } = interaction;
+
+  if (commandName === "ping") {
+    await interaction.reply("Pong !");
+  } 
+  
+  else if (commandName === "url") {
+    const userUrl = interaction.options.getString("url");
+    console.log("Received URL:", userUrl);
+    
+    await interaction.reply(`Your URL is: ${userUrl}`);
+  }
 });
 
 client.login(process.env.DISCORD_BOT_TOKEN);
