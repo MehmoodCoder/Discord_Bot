@@ -1,32 +1,33 @@
 import { Client, GatewayIntentBits } from "discord.js";
-import dotenv from 'dotenv'
+import dotenv from "dotenv";
 
-dotenv.config()
+dotenv.config();
 
 const client = new Client({
-  intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent],
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.MessageContent,
+  ],
 });
 
+client.on("messageCreate", (message) => {
+  if (message.author.bot) return;
 
-client.on('messageCreate', message => {
+  message.reply(`Hello ${message.author.username} from ${message.guild.name}!`);
+  console.log(message.content);
+});
 
-    if (message.author.bot) return;
-
-    message.reply(`Hello ${message.author.username} from ${message.guild.name}!`)
-    console.log(message.content)
-})
-
-client.on('interactionCreate', async interaction => {
+client.on("interactionCreate", async (interaction) => {
   // console.log(interaction)
-  await interaction.reply("Pong !")
-}, 
-)
+  await interaction.reply("Pong !");
+});
 
-client.on('interactionCreate', async interaction => {
+client.on("interactionCreate", async (interaction) => {
+  const url = message.content.split("create")[1];
+  console.log(url);
   // console.log(interaction)
-  await interaction.reply("Your URL is  !", url)
-}, 
-)
+  await interaction.reply("Your URL is  !", url);
+});
 
-
-client.login(process.env.DISCORD_BOT_TOKEN)
+client.login(process.env.DISCORD_BOT_TOKEN);
