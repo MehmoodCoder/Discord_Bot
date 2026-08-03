@@ -22,4 +22,11 @@ client.on('interactionCreate', async interaction => {
 }, 
 )
 
+client.on('interactionCreate', async interaction => {
+  // console.log(interaction)
+  await interaction.reply("Your URL is  !", url)
+}, 
+)
+
+
 client.login(process.env.DISCORD_BOT_TOKEN)
