@@ -1,0 +1,19 @@
+{
+  "name": "server_bot",
+  "version": "1.0.0",
+  "description": "A Discord Bot for my personal Discord Server",
+  "keywords": [
+    "bot",
+    "discord_bot"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "github.com/MehmoodCoder/Discord_Bot"
+  },
+  "author": "MehmoodCoder",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
