@@ -1,0 +1,21 @@
+{
+  "name": "mh_server",
+  "version": "1.0.0",
+  "description": "A bot for my discord server",
+  "keywords": [
+    "bot"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "github.com/MehmoodCoder/Discord_Bot"
+  },
+  "author": "MehmoodCoder",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "discord.js": "^14.27.0"
+  }
+}
